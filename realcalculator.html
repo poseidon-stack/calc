@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+        .calculator {
+            width: 260px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        input{
+            width: 100%;
+            height: 40px;
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+
+        button{
+            width: 60px;
+            height: 40px;
+            margin: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="calculator">
+        <input type="text" id="result" disabled>
+
+        <button onclick="clearResult()">C</button>
+        <button onclick="calculate('/')">/</button>
+
+        <br>
+
+        <button onclick="calculate('7')">7</button>
+        <button onclick="calculate('8')">8</button>
+        <button onclick="calculate('9')">9</button>
+        <button onclick="calculate('*')">*</button>
+
+        <br>
+
+        <button onclick="calculate('4')">4</button>
+        <button onclick="calculate('5')">5</button>
+        <button onclick="calculate('6')">6</button>
+        <button onclick="calculate('-')">-</button>
+
+        <br>
+
+        <button onclick="calculate('1')">1</button>
+        <button onclick="calculate('2')">2</button>
+        <button onclick="calculate('3')">3</button>
+        <button onclick="calculate('+')">+</button>
+
+        <br>
+
+        <button onclick="calculate('0')">0</button>
+        <button onclick="getresult()">=</button>
+    </div>
+
+    <script>
+        function calculate(value) {
+            document.getElementById("result").value += value;
+        }
+
+        function clearResult() {
+            document.getElementById("result").value = "";
+        }
+
+        function getresult() {
+            let expression = document.getElementById("result").value; 
+            document.getElementById("result").value = eval (expression) ; 
+        }
+    </script>
+    
+</body>
+</html>
